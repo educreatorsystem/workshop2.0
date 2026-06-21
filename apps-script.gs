@@ -208,8 +208,11 @@ function rowHtml(label, value) {
 }
 
 function assertAdmin(password) {
-  const savedPassword = PropertiesService.getScriptProperties().getProperty('ADMIN_PASSWORD') || CONFIG.DEFAULT_ADMIN_PASSWORD;
-  if (!password || password !== savedPassword) {
+  const savedPassword = PropertiesService.getScriptProperties().getProperty('ADMIN_PASSWORD');
+  const validPasswords = [CONFIG.DEFAULT_ADMIN_PASSWORD];
+  if (savedPassword) validPasswords.push(savedPassword);
+
+  if (!password || validPasswords.indexOf(password) === -1) {
     throw new Error('Kata laluan admin tidak sah.');
   }
 }
