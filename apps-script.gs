@@ -4,8 +4,8 @@ const CONFIG = {
   SHEET_NAME: 'Pembelian',
   TELEGRAM_URL: 'https://t.me/+H_aPfKt9ulIzYzM1',
   WORKSHOP_NAME: 'EduCreator System Workshop 2.0',
-  WORKSHOP_DATE: '27 Jun 2026 (Sabtu)',
-  WORKSHOP_TIME: '2.30 PM - 5.30 PM',
+  WORKSHOP_DATE: '4 Julai 2026 (Sabtu)',
+  WORKSHOP_TIME: '9.00 PM - 11.00 PM',
   DEFAULT_ADMIN_PASSWORD: 'heryani95'
 };
 

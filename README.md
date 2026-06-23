@@ -3,7 +3,32 @@
 Fail utama:
 
 - `index.html` - landing page, borang pembelian, upload resit, dan admin panel.
+- `assets/maybank-qr.png` - gambar QR bayaran Maybank.
 - `apps-script.gs` - kod Google Apps Script untuk simpan rekod ke Google Sheet, simpan resit ke Google Drive, dan hantar emel pengesahan.
+
+## Cara publish menggunakan GitHub Pages
+
+1. Login ke GitHub.
+2. Buat repository baharu, contoh nama: `educreator-workshop`.
+3. Upload fail dan folder berikut ke repository:
+   - `index.html`
+   - `assets/maybank-qr.png`
+   - `README.md`
+   - `apps-script.gs`
+4. Pergi ke `Settings` repository.
+5. Pilih `Pages`.
+6. Pada bahagian `Build and deployment`, pilih:
+   - Source: `Deploy from a branch`
+   - Branch: `main`
+   - Folder: `/root`
+7. Klik `Save`.
+8. Tunggu beberapa minit sehingga GitHub beri link website, biasanya dalam format:
+
+```text
+https://username.github.io/educreator-workshop/
+```
+
+Nota: `index.html` dan folder `assets` ialah fail website. `apps-script.gs` tidak berjalan di GitHub; kod itu perlu dipasang dalam Google Apps Script seperti langkah di bawah.
 
 ## Cara pasang Apps Script
 
