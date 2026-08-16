@@ -1,10 +1,19 @@
-# EduCreator System Workshop 3.0 Landing Page
+# EduCreator Workshop 4.0 Landing Page
 
 Fail utama:
 
 - `index.html` - landing page, borang pembelian, upload resit, dan admin panel.
 - `assets/maybank-qr.png` - gambar QR bayaran Maybank.
 - `apps-script.gs` - kod Google Apps Script untuk simpan rekod ke Google Sheet, simpan resit ke Google Drive, dan hantar emel pengesahan.
+
+## Butiran workshop
+
+- Nama: EduCreator Workshop 4.0
+- Tarikh: 2 & 3 September 2026
+- Masa: 2.30 PM - 4.30 PM
+- Bayaran: RM50
+- Peserta dapat: E-BOOK Koleksi PROMPT Membina Sistem Pendidikan, rakaman video sepanjang kelas, Group Telegram support, dan sijil 8 jam kredit.
+- Link Telegram peserta hanya dihantar melalui emel selepas admin sahkan penyertaan.
 
 ## Cara publish menggunakan GitHub Pages
 
@@ -54,7 +63,7 @@ Kata laluan admin semasa ialah `heryani95`.
 
 ## Aliran sistem
 
-1. Pelanggan buat bayaran RM45.
+1. Pelanggan buat bayaran RM50.
 2. Pelanggan isi borang dan muat naik resit.
 3. Apps Script simpan data ke Google Sheet dan resit ke folder Drive.
 4. Admin log masuk di bahagian Admin.

@@ -2,10 +2,10 @@ const CONFIG = {
   SHEET_ID: '1g-OdeiBrOMJpe6gIPqfUazQBc6dB8z7Y9d61ACj_GTc',
   DRIVE_FOLDER_ID: '1KNFQmve3ZTFCC172X41VvtzUm1TB5Wbe',
   SHEET_NAME: 'Pembelian',
-  TELEGRAM_URL: 'https://t.me/+H_aPfKt9ulIzYzM1',
-  WORKSHOP_NAME: 'EduCreator System Workshop 3.0',
-  WORKSHOP_DATE: '9 Ogos 2026 (Ahad)',
-  WORKSHOP_TIME: '2.30 PM - 5.30 PM',
+  TELEGRAM_URL: 'https://t.me/+O1VdK9gWMHlkYzBl',
+  WORKSHOP_NAME: 'EduCreator Workshop 4.0',
+  WORKSHOP_DATE: '2 & 3 September 2026 (Rabu & Khamis)',
+  WORKSHOP_TIME: '2.30 PM - 4.30 PM',
   DEFAULT_ADMIN_PASSWORD: 'heryani95'
 };
 
@@ -187,6 +187,22 @@ function sendConfirmationEmail(record) {
     rowHtml('Platform', 'Google Meet - link akan dimaklumkan dalam group Telegram') +
     rowHtml('Link Telegram', '<a href="' + CONFIG.TELEGRAM_URL + '">' + CONFIG.TELEGRAM_URL + '</a>') +
     '</table>' +
+    '<h3 style="color:#0b1f47;margin:18px 0 8px">Apa yang akan dipelajari</h3>' +
+    '<p><strong>2 September 2026:</strong> Demonstrasi membina sistem pendidikan dan asas pengetahuan membina sistem pendidikan.</p>' +
+    '<p><strong>3 September 2026:</strong> Hands-on membina sistem bersama-sama.</p>' +
+    '<ul>' +
+    '<li>Sistem Smart OPR Generator</li>' +
+    '<li>Dashboard peperiksaan / PBD</li>' +
+    '<li>Sistem carian maklumat murid</li>' +
+    '<li>Sistem perekodan PBD</li>' +
+    '</ul>' +
+    '<h3 style="color:#0b1f47;margin:18px 0 8px">Apa yang peserta dapat</h3>' +
+    '<ul>' +
+    '<li>E-BOOK Koleksi PROMPT Membina Sistem Pendidikan</li>' +
+    '<li>Rakaman video sepanjang kelas</li>' +
+    '<li>Group Telegram support</li>' +
+    '<li>Sijil 8 jam kredit</li>' +
+    '</ul>' +
     '<p>Sila join group Telegram untuk maklumat lanjut, bahan kelas, rakaman dan support selepas bengkel.</p>' +
     '<p><a href="' + CONFIG.TELEGRAM_URL + '" style="display:inline-block;background:#1261d8;color:#fff;text-decoration:none;padding:12px 18px;border-radius:8px;font-weight:bold">Join Group Telegram</a></p>' +
     '<p>Terima kasih dan jumpa cikgu dalam kelas.</p>' +

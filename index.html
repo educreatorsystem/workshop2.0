@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EduCreator System Workshop 3.0</title>
-  <meta name="description" content="Workshop untuk guru membina sistem pendidikan sendiri menggunakan Gemini Canvas dan ChatGPT.">
-  <meta name="version" content="2026-07-24-9-ogos">
+  <title>EduCreator Workshop 4.0</title>
+  <meta name="description" content="Workshop dua hari untuk guru membina sistem pendidikan menggunakan Gemini Canvas dan ChatGPT.">
+  <meta name="version" content="2026-08-15-workshop-4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -412,6 +412,110 @@
       font-size: 0.94rem;
     }
 
+    .learning-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 14px 36px rgba(22, 32, 51, 0.05);
+      overflow: hidden;
+    }
+
+    .learning-table-wrap {
+      overflow-x: auto;
+    }
+
+    .learning-table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    .learning-table th,
+    .learning-table td {
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .learning-table th {
+      background: var(--soft);
+      color: var(--blue-950);
+      font-size: 0.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .learning-table td:first-child {
+      width: 24%;
+      color: var(--blue-950);
+      font-weight: 900;
+    }
+
+    .learning-table ul,
+    .takeaway-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .takeaway-box {
+      display: grid;
+      gap: 14px;
+      padding: 20px;
+      background:
+        linear-gradient(135deg, rgba(234, 244, 255, 0.96), rgba(255, 255, 255, 0.98)),
+        #fff;
+    }
+
+    .takeaway-box h3 {
+      margin: 0;
+      color: var(--blue-950);
+      font-size: 1.12rem;
+    }
+
+    .takeaway-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .takeaway-item {
+      min-height: 126px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .takeaway-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      background: var(--blue-100);
+      color: var(--blue-700);
+      font-weight: 900;
+    }
+
+    .takeaway-item strong {
+      display: block;
+      color: var(--blue-950);
+      line-height: 1.35;
+    }
+
+    .takeaway-item span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
     .purchase-band {
       background: linear-gradient(180deg, rgba(234, 244, 255, 0.78), rgba(255, 255, 255, 0.94));
       border-top: 1px solid var(--line);
@@ -733,6 +837,72 @@
       transform: translateY(0);
     }
 
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(11, 31, 71, 0.52);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-backdrop.is-visible {
+      display: flex;
+    }
+
+    .modal-card {
+      width: min(520px, 100%);
+      border: 1px solid rgba(255, 255, 255, 0.64);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 30px 80px rgba(11, 31, 71, 0.28);
+      overflow: hidden;
+    }
+
+    .modal-head {
+      padding: 22px 22px 16px;
+      background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
+      color: #fff;
+    }
+
+    .modal-badge {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      color: var(--blue-850);
+      background: #fff;
+      font-weight: 900;
+    }
+
+    .modal-head h2 {
+      margin: 0;
+      font-size: 1.45rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .modal-body {
+      padding: 22px;
+    }
+
+    .modal-body p {
+      margin: 0;
+      color: #42506b;
+      line-height: 1.7;
+    }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 22px 22px;
+    }
+
     @media (max-width: 920px) {
       .hero-grid,
       .purchase-grid {
@@ -744,6 +914,10 @@
       }
 
       .benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .takeaway-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -794,6 +968,10 @@
         grid-template-columns: 1fr;
       }
 
+      .takeaway-grid {
+        grid-template-columns: 1fr;
+      }
+
       .btn {
         width: 100%;
       }
@@ -809,16 +987,16 @@
   <div class="page">
     <header class="topbar">
       <div class="container nav">
-        <a class="brand" href="#top" aria-label="EduCreator System Workshop 3.0">
+        <a class="brand" href="#top" aria-label="EduCreator Workshop 4.0">
           <img class="brand-logo" src="https://iili.io/Cz1yxG2.md.png" alt="Logo EduCreator">
           <span class="brand-text">
-            <span class="brand-title">EduCreator System Workshop 3.0</span>
+            <span class="brand-title">EduCreator Workshop 4.0</span>
             <span class="brand-subtitle">Gemini Canvas + ChatGPT</span>
           </span>
         </a>
         <div class="nav-actions">
           <a class="btn btn-secondary btn-small" href="#admin">Admin</a>
-          <a class="btn btn-small" href="#daftar">Daftar RM45</a>
+          <a class="btn btn-small" href="#daftar">Daftar RM50</a>
         </div>
       </div>
     </header>
@@ -828,11 +1006,11 @@
         <div class="container hero-grid">
           <div>
             <span class="eyebrow"><span class="dot"></span> Workshop atas talian untuk guru</span>
-            <h1>EduCreator System Workshop 3.0</h1>
+            <h1>EduCreator Workshop 4.0</h1>
             <p class="lead">
-              Bimbingan praktikal untuk guru yang ingin membina sistem pendidikan sendiri,
-              pembelajaran berbentuk game, dan sistem pengurusan yang lebih cekap serta
-              sistematik menggunakan Gemini Canvas dan ChatGPT.
+              Bimbingan praktikal dua hari untuk guru yang ingin membina sistem pendidikan,
+              sistem pengurusan, dashboard, dan sistem carian maklumat dengan lebih cekap
+              menggunakan Gemini Canvas dan ChatGPT.
             </p>
             <div class="hero-actions">
               <a class="btn" href="#daftar">Saya nak daftar sekarang</a>
@@ -840,15 +1018,15 @@
             <div class="quick-facts" aria-label="Maklumat workshop">
               <div class="fact">
                 <span class="fact-label">Tarikh</span>
-                <strong class="fact-value">9 Ogos 2026<br>Ahad</strong>
+                <strong class="fact-value">2 &amp; 3 September 2026<br>Rabu &amp; Khamis</strong>
               </div>
               <div class="fact">
                 <span class="fact-label">Masa</span>
-                <strong class="fact-value">2.30 PM<br>hingga 5.30 PM</strong>
+                <strong class="fact-value">2.30 PM<br>hingga 4.30 PM</strong>
               </div>
               <div class="fact">
                 <span class="fact-label">Yuran</span>
-                <strong class="fact-value">RM 45<br>seorang</strong>
+                <strong class="fact-value">RM 50<br>seorang</strong>
               </div>
             </div>
           </div>
@@ -857,7 +1035,7 @@
             <div class="hero-card-top">
               <img class="hero-card-logo" src="https://iili.io/Cz1yxG2.md.png" alt="Logo workshop">
               <p class="price-label">Yuran penyertaan</p>
-              <div class="price">RM45</div>
+              <div class="price">RM50</div>
               <p>Tempat disahkan selepas bayaran dan resit berjaya disemak oleh admin.</p>
             </div>
             <div class="countdown" id="countdown">
@@ -873,30 +1051,70 @@
       <section class="section">
         <div class="container">
           <div class="section-heading">
-            <h2>Apa yang cikgu akan dapat</h2>
-            <p>Setiap peserta akan menerima bahan dan sokongan yang membantu cikgu terus bina sistem selepas kelas tamat.</p>
+            <h2>Apa yang akan dipelajari</h2>
+            <p>Workshop ini disusun dalam dua sesi: demonstrasi asas pada hari pertama dan hands-on membina sistem pada hari kedua.</p>
           </div>
-          <div class="benefits">
-            <article class="benefit">
-              <div class="benefit-mark">01</div>
-              <h3>Sijil pembelajaran atas talian</h3>
-              <p>Sijil dengan 8 jam mata kredit untuk rekod pembelajaran profesional cikgu.</p>
-            </article>
-            <article class="benefit">
-              <div class="benefit-mark">02</div>
-              <h3>E-book sistem prompt pendidikan</h3>
-              <p>Koleksi prompt yang boleh dijadikan asas untuk bina bahan dan sistem PdP.</p>
-            </article>
-            <article class="benefit">
-              <div class="benefit-mark">03</div>
-              <h3>Rakaman Google Meet kelas</h3>
-              <p>Tonton semula langkah penting supaya cikgu boleh ulang kaji ikut masa sendiri.</p>
-            </article>
-            <article class="benefit">
-              <div class="benefit-mark">04</div>
-              <h3>Sokongan selepas workshop</h3>
-              <p>Ruang bertanya dan berkongsi hasil kerja selepas tempahan disahkan.</p>
-            </article>
+          <div class="learning-panel">
+            <div class="learning-table-wrap">
+              <table class="learning-table">
+                <thead>
+                  <tr>
+                    <th>Tarikh</th>
+                    <th>Fokus pembelajaran</th>
+                    <th>Aktiviti dan hasil</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2 September 2026</td>
+                    <td>Demonstrasi dan asas membina sistem pendidikan</td>
+                    <td>
+                      <ul>
+                        <li>Demonstrasi membina sistem pendidikan.</li>
+                        <li>Asas pengetahuan membina sistem pendidikan.</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3 September 2026</td>
+                    <td>Hands-on membina sistem bersama-sama</td>
+                    <td>
+                      <ul>
+                        <li>Sistem Smart OPR Generator.</li>
+                        <li>Dashboard peperiksaan / PBD.</li>
+                        <li>Sistem carian maklumat murid.</li>
+                        <li>Sistem perekodan PBD.</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="takeaway-box">
+              <h3>Apa yang peserta dapat</h3>
+              <div class="takeaway-grid">
+                <div class="takeaway-item">
+                  <div class="takeaway-icon">01</div>
+                  <strong>E-BOOK Koleksi PROMPT</strong>
+                  <span>Panduan prompt untuk membina sistem pendidikan dengan lebih tersusun.</span>
+                </div>
+                <div class="takeaway-item">
+                  <div class="takeaway-icon">02</div>
+                  <strong>Rakaman video sepanjang kelas</strong>
+                  <span>Boleh tonton semula langkah penting selepas sesi live tamat.</span>
+                </div>
+                <div class="takeaway-item">
+                  <div class="takeaway-icon">03</div>
+                  <strong>Group Telegram support</strong>
+                  <span>Akses diberikan melalui emel selepas penyertaan disahkan.</span>
+                </div>
+                <div class="takeaway-item">
+                  <div class="takeaway-icon">04</div>
+                  <strong>Sijil 8 jam kredit</strong>
+                  <span>Sijil pembelajaran atas talian untuk rekod profesional cikgu.</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -905,7 +1123,7 @@
         <div class="container purchase-grid">
           <aside class="payment-card">
             <span class="card-kicker">Maklumat bayaran</span>
-            <h2>Buat bayaran RM45</h2>
+            <h2>Buat bayaran RM50</h2>
             <p>Sila buat bayaran ke akaun berikut, kemudian muat naik resit dalam borang pembelian.</p>
 
             <div class="account-box">
@@ -1021,18 +1239,35 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <span>EduCreator System Workshop 3.0</span>
+        <span>EduCreator Workshop 4.0</span>
         <span>Akses peserta hanya diberikan melalui emel selepas pengesahan admin.</span>
       </div>
     </footer>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successModalTitle">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-badge">✓</div>
+        <h2 id="successModalTitle">Borang pembelian berjaya dihantar</h2>
+      </div>
+      <div class="modal-body">
+        <p>
+          Pengesahan kelas akan dibuat dalam tempoh 1 hingga 2 hari. Sila semak emel cikgu,
+          termasuk folder Spam atau Junk, untuk mendapatkan maklumat lanjut dan link group Telegram.
+        </p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn" type="button" id="closeSuccessModal">Saya faham</button>
+      </div>
+    </div>
+  </div>
 
   <script>
     const CONFIG = {
       scriptUrl: "https://script.google.com/macros/s/AKfycbwzAMWjSDY87W6vXDF1U0YcArP-MVbrtIfmx66fGI31CVSIyNBNKVQo3ANrYVFrkj_R/exec",
-      workshopAt: "2026-08-09T14:30:00+08:00",
+      workshopAt: "2026-09-02T14:30:00+08:00",
       accountNumber: "501114422550"
     };
 
@@ -1044,6 +1279,15 @@
       toast.classList.add("is-visible");
       window.clearTimeout(showToast.timer);
       showToast.timer = window.setTimeout(() => toast.classList.remove("is-visible"), 3600);
+    }
+
+    function showSuccessModal() {
+      $("#successModal").classList.add("is-visible");
+      $("#closeSuccessModal").focus();
+    }
+
+    function closeSuccessModal() {
+      $("#successModal").classList.remove("is-visible");
     }
 
     function setStatus(element, message, type = "") {
@@ -1132,7 +1376,7 @@
 
         form.reset();
         setStatus(status, "Maklumat berjaya dihantar. Tempahan akan disahkan selepas resit disemak.", "success");
-        showToast("Borang dihantar. Sila semak emel selepas pengesahan admin.");
+        showSuccessModal();
       } catch (error) {
         setStatus(status, error.message || "Ralat berlaku. Sila cuba lagi.", "error");
       } finally {
@@ -1279,6 +1523,13 @@
     });
 
     $("#purchaseForm").addEventListener("submit", submitPurchase);
+    $("#closeSuccessModal").addEventListener("click", closeSuccessModal);
+    $("#successModal").addEventListener("click", (event) => {
+      if (event.target.id === "successModal") closeSuccessModal();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeSuccessModal();
+    });
     $("#adminLogin").addEventListener("click", loadRecords);
     $("#refreshRecords").addEventListener("click", loadRecords);
     $("#recordsBody").addEventListener("click", (event) => {
